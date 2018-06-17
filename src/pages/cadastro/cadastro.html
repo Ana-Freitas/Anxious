@@ -1,0 +1,43 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title> Cadastrar </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <h1 text-center>
+    <ion-icon class="auth-icon" name="person-add" color="primary"></ion-icon>
+  </h1>
+
+  <form [formGroup]="formCadastro" (ngSubmit)="Criar(); $event.preventDefault()">
+
+    <ion-item>
+      <ion-icon name="person" item-start color="primary"></ion-icon>
+      <ion-input type="text" placeholder="Nome" formControlName="nome"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="at" item-start color="primary"></ion-icon>
+      <ion-input type="text" placeholder="Username" formControlName="username"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="mail" item-start color="primary"></ion-icon>
+      <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="lock" item-start color="primary"></ion-icon>
+      <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+    </ion-item>
+
+    <br>
+    <button ion-button full type="submit" [disabled]="formCadastro.invalid"> Criar Conta </button>
+
+  </form>
+
+</ion-content>
